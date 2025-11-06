@@ -14,7 +14,7 @@
         <p class="subtitle">Seja bem-vindo, escolha pedra papel ou tesoura e venha se divertir com esse projeto</p>
 
         <?php
-        // Definir as opções do jogo (movido para o início)
+        
         $opcoes = [
             'pedra' => [
                 'nome' => 'Pedra',
@@ -30,7 +30,7 @@
             ]
         ];
 
-        // Inicializar variáveis
+       
         $player_choice_key = '';
         $computer_choice_key = '';
         $player_choice = [];
@@ -127,25 +127,25 @@
     </div>
 
     <script>
-        // Adicionar interatividade às escolhas
+        
         document.addEventListener('DOMContentLoaded', function() {
             const choices = document.querySelectorAll('.choice');
             const playerChoiceInput = document.getElementById('player_choice');
 
             choices.forEach(choice => {
                 choice.addEventListener('click', function() {
-                    // Remover a classe 'selected' de todas as opções
+                    
                     choices.forEach(c => c.classList.remove('selected'));
 
-                    // Adicionar a classe 'selected' à opção clicada
+                   
                     this.classList.add('selected');
 
-                    // Definir o valor do input hidden
+                    
                     playerChoiceInput.value = this.getAttribute('data-value');
                 });
             });
 
-            // Se o formulário foi enviado, marcar a escolha do jogador
+           
             <?php if (isset($player_choice_key) && !empty($player_choice_key)): ?>
                 const selectedChoice = document.querySelector(`.choice[data-value="<?php echo $player_choice_key; ?>"]`);
                 if (selectedChoice) {
